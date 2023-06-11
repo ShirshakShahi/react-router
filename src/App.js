@@ -1,22 +1,28 @@
-import { Routes, Route } from 'react-router-dom';
-import './index.css';
-import Welcome from './Pages/Welcome';
-import Products from './Pages/Products';
-import MainHeader from './components/MainHeader';
-import ProductDetail from './Pages/ProductDetail';
+import { Route, Routes } from 'react-router-dom';
+import NewQuote from './pages/NewQuote';
+import AllQuotes from './pages/AllQuotes';
+import QuoteDetail from './pages/QuoteDetail';
+import Comments from './components/comments/Comments';
+import Layout from './components/layout/Layout';
+import NotFound from './pages/NotFound';
+
 
 function App() {
-    return (
-        <div>
-            <MainHeader />
-            <main>
-                <Routes>
-                    <Route path="/welcome" element={<Welcome />} />
-                    <Route path="/products" element={<Products />} exact />
-                    <Route path="/product/:productId" element={<ProductDetail />} />
-                </Routes>
-            </main>
-        </div>
-    );
+  return (<Layout>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/quotes" element={<AllQuotes />} />
+      <Route path="/quotes/:quoteId" element={<QuoteDetail />} />
+      <Route path="/quotes/:quoteId/comments" element={<Comments />} />
+      <Route path="/new-quote" element={<NewQuote />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </Layout>
+  );
 }
+
+function Home() {
+  return <AllQuotes />;
+}
+
 export default App;
