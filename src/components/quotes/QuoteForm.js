@@ -31,7 +31,7 @@ const QuoteForm = (props) => {
 
   return (<Fragment>
     <Card>
-      <form onLoad={handleNavigation} className={classes.form} onSubmit={submitFormHandler}>
+      <form className={classes.form} onSubmit={submitFormHandler}>
         {props.isLoading && (
           <div className={classes.loading}>
             <LoadingSpinner />

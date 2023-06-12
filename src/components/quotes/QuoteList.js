@@ -6,6 +6,9 @@ import classes from './QuoteList.module.css';
 const QuoteList = (props) => {
   return (
     <Fragment>
+      <div className={classes.sorting}>
+      <button>Sorting Ascending</button>
+      </div>
       <ul className={classes.list}>
         {props.quotes.map((quote) => (
           <QuoteItem

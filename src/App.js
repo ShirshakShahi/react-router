@@ -13,7 +13,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/quotes" element={<AllQuotes />} />
       <Route path="/quotes/:quoteId" element={<QuoteDetail />} />
-      <Route path="/quotes/:quoteId/comments" element={<Comments />} />
+      <Route path="/quotes/:quoteId" element={<Comments />} />
       <Route path="/new-quote" element={<NewQuote />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

@@ -54,3 +54,7 @@ body {
   background-color: teal;
   color: white;
 }
+
+.block{
+  display: inline-block;
+}
